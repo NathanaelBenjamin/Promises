@@ -166,3 +166,31 @@
        }).catch(error => {
            console.log(`Promise rejected: `, error.message);
        });
+
+
+const check = (callback) => {
+        const request = new XMLHttpRequest( );
+        request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=abeokuta&APPID=b34fddd3dae4a2eb0ad363b62f98ba1e');
+        request.send( );
+
+        request.addEventListener('readystatechange', ( ) => {
+            if(request.status == 200 && request.readyState == 4){
+                const data = JSON.parse(request.responseText);
+                callback(undefined, data)
+            }
+
+            else if(request.readyState == 4){
+                callback('Error fetching data!', undefined);
+            }
+        });
+       };
+
+       check( (error, data) => {
+           if(error){
+               console.log(error);
+           }
+
+           else{
+               console.log(data);
+           }
+       });
