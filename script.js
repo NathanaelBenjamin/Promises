@@ -165,7 +165,7 @@
 //            console.log(`Promise 3 resolved: `, data);
 //        }).catch(error => {
 //            console.log(`Promise rejected: `, error.message);
-//        });
+//       });
 
 
 const check = (callback) => {
