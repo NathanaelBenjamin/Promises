@@ -145,27 +145,27 @@
        //The async keyword makes the function return a promise 
        //while the await keyword blocks subsequent codes until its own is fully loaded and executed.
 
-       const json = async (resource) => {
-        const response = await fetch(resource);
-        if(response.status !== 200){
-            throw new Error('Error fetching data');
-        }
+//        const json = async (resource) => {
+//         const response = await fetch(resource);
+//         if(response.status !== 200){
+//             throw new Error('Error fetching data');
+//         }
 
-        const data = await response.json( );
-        return data;
-       };
+//         const data = await response.json( );
+//         return data;
+//        };
 
-       json('https://jsonplaceholder.typicode.com/users').then(data => {
-           console.log(`Promise 1 resolved: `, data);
-           return json('https://jsonplaceholder.typicode.com/todos/');
-       }).then(data => {
-           console.log(`Promise 2 resolved: `, data);
-           return json('http://api.openweathermap.org/data/2.5/weather?q=abeokuta&APPID=b34fddd3dae4a2eb0ad363b62f98ba1e');
-       }).then(data => {
-           console.log(`Promise 3 resolved: `, data);
-       }).catch(error => {
-           console.log(`Promise rejected: `, error.message);
-       });
+//        json('https://jsonplaceholder.typicode.com/users').then(data => {
+//            console.log(`Promise 1 resolved: `, data);
+//            return json('https://jsonplaceholder.typicode.com/todos/');
+//        }).then(data => {
+//            console.log(`Promise 2 resolved: `, data);
+//            return json('http://api.openweathermap.org/data/2.5/weather?q=abeokuta&APPID=b34fddd3dae4a2eb0ad363b62f98ba1e');
+//        }).then(data => {
+//            console.log(`Promise 3 resolved: `, data);
+//        }).catch(error => {
+//            console.log(`Promise rejected: `, error.message);
+//        });
 
 
 const check = (callback) => {
